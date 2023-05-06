@@ -1,0 +1,13 @@
+name: First Workflow # name
+
+# when will this be triggered?
+on: workflow_dispatch # one of many events; this event will trigger when we manually start this workflow.
+
+jobs: # work that needs to be done.
+  first-job: # name
+    runs-on: ubuntu-latest # runner; where will our workflow run?
+    steps: # the steps of our jobs.
+      - name: Print greeting
+        run: echo "Hello World!" # running a linux command on our ubuntu-latest runner.
+      - name: Print goodbye
+        run: echo "Done - bye!"
