@@ -21,4 +21,8 @@ jobs: # Jobs performed on the action
         run: |
           echo This is a multi-line
           echo action
+      - name: use node
+        uses: actions/setup-node@v3
+        with: # actions parameters
+          node-version: 18
   
