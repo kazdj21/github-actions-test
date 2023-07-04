@@ -1,1 +1,24 @@
+name: Second Action # name
 
+on: # Action is performed when
+  push: # a push request is made
+    branches: # on the main branch
+      - main
+  pull_request: # a pull request is made
+    branches: # on the main branch
+      - main
+  workflow_dispatch: # or manually clicking the workflow dispatch.
+
+jobs: # Jobs performed on the action
+  build: # The name of the job
+    runs-on: ubuntu-latest # running on ubuntu
+    steps:
+      - name: get code # the name of the step
+        uses: actions/checkout@v3 # checkout action
+      - name: output stuff
+        run: echo Hello World # runs a CLI command
+      - name: output more stuff
+        run: |
+          echo This is a multi-line
+          echo action
+  
